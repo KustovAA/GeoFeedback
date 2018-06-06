@@ -67,13 +67,6 @@ module.exports = env => {
                             }
                         }
                     ]
-                },
-                {
-                    test: /\.pug$/,
-                    loader: 'pug-loader',
-                    options: {
-                        pretty: '\t'
-                    }
                 }
             ]
         },
@@ -81,7 +74,7 @@ module.exports = env => {
             new CleanWebpackPlugin(config.root.dest),
             new HtmlWebpackPlugin({
                 filename: 'index.html',
-                template: `${config.root.src}/index.pug`,
+                template: `${config.root.src}/index.html`,
                 chunks: ['app']
             }),
             new ExtractTextPlugin({ filename: 'styles/style.css' })
